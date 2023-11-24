@@ -1,0 +1,27 @@
+
+.header {
+    display: flex;
+    justify-content: center;
+}
+.navHeaderList {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+.list {
+    padding: 10px;
+    list-style: none;
+    a {
+        text-decoration: none;
+    }
+}
+.rightNav {
+    display: flex;
+    align-items: center;
+    li {
+        padding: 10px;
+        cursor: pointer;
+        list-style: none;
+    }
+}

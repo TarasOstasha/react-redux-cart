@@ -1,0 +1,27 @@
+[
+    {
+      "id":"1",  
+      "link": "Home",
+     "href": "/"
+    },
+    {
+      "id":"2",  
+      "link": "Best Sellers",
+      "href": "/best-seller"
+    },
+    {
+      "id":"3",  
+      "link": "Services",
+      "href": "/services"
+    },
+    {
+      "id":"4",  
+      "link": "About Us",
+      "href": "/about-us"
+    },
+    {
+      "id":"5",  
+      "link": "Contact Us",
+      "href": "/contact-us"
+    }
+]
