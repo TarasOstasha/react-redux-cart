@@ -1,12 +1,16 @@
+import { connect } from 'react-redux'
 import { CiShoppingCart } from "react-icons/ci";
 import { MdDownloadDone } from "react-icons/md";
 import { GrClearOption } from "react-icons/gr";
-import { CiCircleInfo } from "react-icons/ci";
 import { MdFavoriteBorder } from "react-icons/md";
+
+import { increment } from '../../store/slices/cardListSlice';
 
 import styles from './Card.module.scss';
 
-function Card() {
+function Card(props) {
+  const { count, step, incrementCount } = props;
+  const addToCartHandler = () => incrementCount()
   return (
     <div className={styles.wrapper}>
       <div className={styles.container}>
@@ -17,8 +21,8 @@ function Card() {
               <h1>Chair</h1>
               <p>£250</p>
             </div>
-            <div className={styles.buy}>
-              <i><CiShoppingCart /></i>
+            <div className={styles.buy} onClick={addToCartHandler}>
+              <i><CiShoppingCart /></i><i className={styles.count}>{count > 0 && count}</i> {step}
             </div>
           </div>
           <div className={styles.right}>
@@ -45,4 +49,16 @@ function Card() {
   );
 }
 
-export default Card;
+const mapStateToProps = state => {
+  return state.counter
+}  
+
+const mapDispathToProps = dispatch => {
+  return {
+    incrementCount: () => dispatch(increment())
+  }
+}
+
+//const withAccessToStore = connect(mapStateToProps, mapDispathToProps)
+
+export default connect(mapStateToProps, mapDispathToProps)(Card);
