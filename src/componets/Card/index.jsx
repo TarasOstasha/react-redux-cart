@@ -5,6 +5,7 @@ import { GrClearOption } from "react-icons/gr";
 import { MdFavoriteBorder } from "react-icons/md";
 
 import { increment } from '../../store/slices/cardListSlice';
+import { NavLink } from "react-router-dom";
 
 import styles from './Card.module.scss';
 
@@ -22,6 +23,7 @@ function Card(props) {
               <p>£250</p>
             </div>
             <div className={styles.buy} onClick={addToCartHandler}>
+              {/* <NavLink to={} /> */}
               <i><CiShoppingCart /></i><i className={styles.count}>{count > 0 && count}</i> {step}
             </div>
           </div>

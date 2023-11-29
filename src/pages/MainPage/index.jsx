@@ -4,9 +4,9 @@ import CardList from '../../componets/CardList';
 
 function Main() {
     return (
-        <main>
+        // <main>
             <CardList />
-        </main>
+        // </main>
     )
 }
 

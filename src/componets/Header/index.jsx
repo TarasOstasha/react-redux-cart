@@ -4,7 +4,23 @@ import { GrBasket } from "react-icons/gr";
 
 import { Link, NavLink } from "react-router-dom";
 import nav from "./nav.json";
+import rightNav from "./rightNav.json";
 import styles from './Header.module.scss';
+
+
+// const rightNav = [
+//   {
+//     id: 1,
+//     href: "/favorite",
+//   },
+//   {
+//     id: 2,
+//     href: "/cart"
+//   }
+// ]
+
+
+
 
 function Header(props) {
   const { count } = props;
@@ -25,10 +41,15 @@ function Header(props) {
       <nav>
           <ul className={styles.rightNav}>
               <li className={styles.list}>
+                <NavLink to={rightNav[0].href}>
                   <MdFavoriteBorder />
+                </NavLink>
               </li>
               <li>
-                  <GrBasket /><i className={styles.counter}>{count > 0 && count}</i>
+                  <NavLink to={rightNav[1].href}>
+                    <GrBasket />
+                    <i className={styles.counter}>{count > 0 && count}</i>
+                  </NavLink>
               </li>
           </ul>
       </nav>
